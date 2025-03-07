@@ -1,14 +1,14 @@
 /* Logo Styling */
 .logo {
-    width: 45px; 
+    width: 55px; /* Bigger for better visibility */
     height: auto;
-    margin-right: 10px;
+    margin-right: 12px;
 }
 
 /* Text Selection Styling */
 *::selection {
-    background: #1d1201; 
-    color: black; 
+    background: #ff4d00; /* Sporty red color */
+    color: white; 
 }
 
 /* Navbar Styling */
@@ -18,17 +18,18 @@
     left: 0; 
     width: 100%; 
     z-index: 1000; 
-    background: linear-gradient(45deg, #ffffff, #f3f3f3);
-    padding: 10px 0;
+    background: linear-gradient(45deg, #222831, #393e46); /* Dark car theme */
+    padding: 12px 0;
     transition: background 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Navbar Brand */
 .navbar-brand {
     font-size: 2rem;
     font-weight: bold;
-    font-family: 'Poppins', sans-serif;
-    color: #d37014;
+    font-family: 'Bebas Neue', sans-serif; /* Car branding style font */
+    color: #ff4d00;
     display: flex;
     align-items: center;
     transition: transform 0.3s ease-in-out;
@@ -43,9 +44,10 @@
     position: relative;
     transition: color 0.3s ease-in-out;
     font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
-    color: #d37014;
-    padding: 10px 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #eeeeee; /* Soft white for readability */
+    padding: 12px 18px;
 }
 
 /* Underline Hover Effect */
@@ -56,7 +58,7 @@
     left: 50%;
     width: 0;
     height: 2px;
-    background-color: #d37014;
+    background-color: #ff4d00; /* Sporty orange underline */
     transition: width 0.3s ease, left 0.3s ease;
 }
 
@@ -68,22 +70,34 @@
 /* Active Link */
 .nav-link.active {
     font-weight: bold;
-    color: #d37014;
+    color: #ff4d00;
 }
 
 /* Navbar Toggler */
 .navbar-toggler {
     border: none;
     outline: none;
+    background: none;
 }
 
 .navbar-toggler-icon {
-    color: #d37014;
+    color: white;
 }
 
-/* Box Shadow for Depth */
-.shadow-sm {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* Button Enhancements */
+.btn-custom {
+    background: #ff4d00;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 10px 20px;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-custom:hover {
+    background: white;
+    color: #ff4d00;
+    border: 2px solid #ff4d00;
 }
 
 /* Responsive Navbar */
