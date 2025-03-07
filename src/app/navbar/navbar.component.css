@@ -1,0 +1,98 @@
+/* Logo Styling */
+.logo {
+    width: 45px; 
+    height: auto;
+    margin-right: 10px;
+}
+
+/* Text Selection Styling */
+*::selection {
+    background: #1d1201; 
+    color: black; 
+}
+
+/* Navbar Styling */
+.navbar {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1000; 
+    background: linear-gradient(45deg, #ffffff, #f3f3f3);
+    padding: 10px 0;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Navbar Brand */
+.navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    color: #d37014;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.1);
+}
+
+/* Navbar Links */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    color: #d37014;
+    padding: 10px 15px;
+}
+
+/* Underline Hover Effect */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #d37014;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Active Link */
+.nav-link.active {
+    font-weight: bold;
+    color: #d37014;
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    color: #d37014;
+}
+
+/* Box Shadow for Depth */
+.shadow-sm {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Navbar */
+@media (max-width: 992px) {
+    .navbar-brand {
+        font-size: 1.7rem;
+    }
+    
+    .nav-link {
+        font-size: 1rem;
+    }
+}
