@@ -5,14 +5,16 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import { ContactComponent } from './contact/contact.component';
-import { AuthGuard } from './auth.guard'; // Import the guard
+import { AuthGuard } from './auth.guard';
+import { AllCarsComponent } from './all-cars/all-cars.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'contact', component: ContactComponent   },
+  { path: 'allcars', component: AllCarsComponent },
+  { path: 'contact', component: ContactComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'car-details', component: CarDetailsComponent, canActivate: [AuthGuard] }, // 🔒 Protected Route
+  { path: 'car-details', component: CarDetailsComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];

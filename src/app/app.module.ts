@@ -18,6 +18,7 @@ import { RegisterComponent } from './register/register.component';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ContactComponent } from './contact/contact.component';
+import { AllCarsComponent } from './all-cars/all-cars.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ContactComponent } from './contact/contact.component';
     RegisterComponent,
     CarDetailsComponent,
     NavbarComponent,
-    ContactComponent
+    ContactComponent,
+    AllCarsComponent
   ],
   imports: [
     BrowserModule,

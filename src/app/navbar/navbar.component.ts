@@ -32,6 +32,6 @@ export class NavbarComponent implements OnInit {
     localStorage.removeItem('token');
     this.isLoggedIn = false;
     this.userName = null;
-    this.router.navigate(['/login']); // إعادة التوجيه إلى صفحة تسجيل الدخول
+    this.router.navigate(['/login']); 
   }
 }

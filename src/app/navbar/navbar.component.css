@@ -1,4 +1,3 @@
-
 .navbar {
     position: sticky;
     top: 0;
@@ -10,67 +9,62 @@
 }
 
 .navbar.scrolled {
-    background: #ffffff; /* Solid white when scrolled for contrast */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); /* Stronger shadow on scroll */
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
-/* Logo */
 .logo {
-    width: 48px; /* Slightly larger for prominence */
+    width: 48px;
     height: 48px;
-    margin-right: 12px; /* Consistent spacing */
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); 
-    transition: transform 0.3s ease; /* Smooth scaling */
+    margin-right: 12px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
 }
 
 .logo:hover {
-    transform: scale(1.1); 
+    transform: scale(1.1);
 }
 
-/* Navbar Brand */
-/* Navbar Brand (Logo Text) */
 .navbar-brand {
-    font-size: 2.2rem; /* تكبير حجم الخط */
-    font-weight: 800; /* جعل الخط أكثر سمكًا */
+    font-size: 2.2rem;
+    font-weight: 800;
     font-family: "Pacifico", cursive;
-    color: #60a5fa; /* لون أزرق أكثر قوة */
-    text-transform: uppercase; /* الأحرف الكبيرة لمظهر احترافي */
-    letter-spacing: 1.5px; /* توسيع التباعد بين الأحرف */
+    color: #60a5fa;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar-brand:hover {
-    transform: scale(1.08); /* تكبير طفيف عند التحويم */
-    color: #3b82f6; /* تغيير اللون عند التحويم */
+    transform: scale(1.08);
+    color: #3b82f6;
 }
 
-
-/* Nav Links */
 .nav-link {
     position: relative;
     font-family: 'Poppins', sans-serif;
-    font-size: 0.9rem; 
+    font-size: 0.9rem;
     font-weight: 500;
-    color: #2d3748; 
-    padding: 10px 15px; 
+    color: #2d3748;
+    padding: 10px 15px;
     transition: color 0.3s ease-in-out, transform 0.2s ease;
 }
 
 .nav-link::after {
     content: '';
     position: absolute;
-    bottom: -6px; /* Adjusted for better balance */
+    bottom: -6px;
     left: 50%;
     width: 0;
-    height: 3px; /* Thicker underline for boldness */
-    background: linear-gradient(90deg, #3b82f6, #60a5fa); /* Gradient underline */
-    border-radius: 2px; /* Rounded edges */
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    border-radius: 2px;
     transition: width 0.3s ease, left 0.3s ease;
 }
 
 .nav-link:hover {
     color: #3182ce;
-    transform: translateY(-2px); /* Subtle lift on hover */
+    transform: translateY(-2px);
 }
 
 .nav-link:hover::after {
@@ -79,65 +73,63 @@
 }
 
 .nav-link.active {
-    color: #5e9cfa; /* Warm orange for active state */
-    font-weight: 600; /* Slight emphasis */
+    color: #5e9cfa;
+    font-weight: 600;
 }
 
 .nav-link.active::after {
     width: 100%;
     left: 0;
-    background: #5e9cfa; /* Match active color */
+    background: #5e9cfa;
 }
 
-/* Buttons */
 .btn-custom,
 .btn-outline-custom {
-    font-size: 0.7rem; /* Larger for prominence */
-    padding: 10px 20px; /* More comfortable padding */
-    border-radius: 30px; /* Pill-shaped for modern vibe */
+    font-size: 0.7rem;
+    padding: 10px 20px;
+    border-radius: 30px;
     font-weight: 600;
-    text-transform: uppercase; /* Bold and modern */
+    text-transform: uppercase;
     letter-spacing: 0.5px;
-    transition: all 0.3s ease-in-out; /* Smooth all transitions */
+    transition: all 0.3s ease-in-out;
 }
 
 .btn-custom {
-    background: linear-gradient(45deg, #3b82f6, #60a5fa); /* Blue gradient matching nav links */
+    background: linear-gradient(45deg, #3b82f6, #60a5fa);
     color: #fff;
     border: none;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); /* Subtle matching shadow */
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
 .btn-custom:hover {
     background: #ffffff;
-    color: #3b82f6; /* Consistent blue on hover */
-    border: 2px solid #3b82f6; /* Blue border */
+    color: #3b82f6;
+    border: 2px solid #3b82f6;
     box-shadow: 0 6px 18px rgba(59, 130, 246, 0.25);
-    transform: translateY(-2px); /* Slight lift */
+    transform: translateY(-2px);
 }
 
 .btn-outline-custom {
     background: transparent;
-    color: #2d3748; /* Dark gray to match nav links */
-    border: 2px solid #2d3748; /* Consistent border */
-    margin-left: 12px; /* Consistent spacing */
+    color: #2d3748;
+    border: 2px solid #2d3748;
+    margin-left: 12px;
 }
 
 .btn-outline-custom:hover {
-    background: #2d3748; /* Dark gray fill */
+    background: #2d3748;
     color: #fff;
-    box-shadow: 0 4px 12px rgba(45, 55, 72, 0.3); /* Matching shadow */
+    box-shadow: 0 4px 12px rgba(45, 55, 72, 0.3);
     transform: translateY(-2px);
 }
 
-/* Responsive Design */
 @media (max-width: 992px) {
     .navbar {
-        padding: 10px 0; /* Adjust padding */
+        padding: 10px 0;
     }
 
     .navbar-brand {
-        font-size: 1.6rem; /* Slightly smaller */
+        font-size: 1.6rem;
     }
 
     .nav-link {
@@ -154,7 +146,7 @@
 
 @media (max-width: 768px) {
     .navbar {
-        background: #ffffff; /* Solid background on mobile */
+        background: #ffffff;
     }
 
     .navbar-brand {
@@ -163,18 +155,18 @@
 
     .nav-link {
         font-size: 0.95rem;
-        padding: 10px; /* Stack nicely in mobile menu */
+        padding: 10px;
         text-align: center;
     }
 
     .nav-link::after {
-        bottom: 2px; /* Adjust for mobile stacking */
+        bottom: 2px;
     }
 
     .btn-custom,
     .btn-outline-custom {
-        width: 100%; /* Full-width buttons in mobile menu */
-        margin: 5px 0; /* Vertical stacking */
+        width: 100%;
+        margin: 5px 0;
     }
 }
 
@@ -193,7 +185,6 @@
     }
 }
 
-/* Animation for navbar entrance */
 @keyframes slideIn {
     from {
         transform: translateY(-100%);
@@ -206,5 +197,5 @@
 }
 
 .navbar {
-    animation: slideIn 0.5s ease-out forwards; /* Subtle entrance */
+    animation: slideIn 0.5s ease-out forwards;
 }

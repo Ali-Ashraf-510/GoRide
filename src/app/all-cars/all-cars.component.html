@@ -1,0 +1,19 @@
+<div class="cart-container">
+    <h2 class="cart-header">Shopping Cart</h2>
+  
+    <div *ngFor="let cart of carts" class="cart">
+      <h3>Cart #{{ cart.id }}</h3>
+  
+      <div *ngFor="let product of cart.products" class="product-card">
+        <img [src]="product.thumbnail" alt="{{ product.title }}">
+        <div class="product-details">
+          <h4>{{ product.title }}</h4>
+          <p>Price: <span>{{ product.price | currency:'USD' }}</span></p>
+          <p>Quantity: <span>{{ product.quantity }}</span></p>
+          <p>Total: <span>{{ product.total | currency:'USD' }}</span></p>
+          <p>Discount: <span>{{ product.discountPercentage }}%</span></p>
+          <p>Discounted Price: <span>{{ product.discountedTotal | currency:'USD' }}</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
