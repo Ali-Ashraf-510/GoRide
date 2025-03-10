@@ -30,65 +30,33 @@
   <div class="hero-overlay"></div>
 </section>
 
-<!-- Premium Brands Section -->
-<section class="py-5">
-  <div class="container">
-    <h2 class="h4 mb-4">Explore Our Premium Brands</h2>
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-2 col-4" *ngFor="let brand of brands">
-        <div class="card border-0 text-center">
-          <img [src]="brand.image" class="card-img-top mx-auto" [alt]="brand.name">
-          <div class="card-body">
-            <h6 class="card-title">{{ brand.name }}</h6>
-          </div>
+<section class="container my-5">
+  <h2 class="text-center mb-4">🚗 All Cars</h2>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let car of allCars">
+      <div class="card car-card">
+        <img [src]="car.image" class="card-img-top" alt="{{ car.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ car.name }}</h5>
+          <p class="card-text">{{ car.price }}</p>
+          <button class="btn btn-primary">View Details</button>
         </div>
       </div>
-    </div>
-    <div class="text-center mt-3">
-      <a href="#" class="text-muted">Show All Brands <i class="fas fa-arrow-right"></i></a>
     </div>
   </div>
 </section>
 
-<!-- Explore All Vehicles Section -->
-<section class="py-5 bg-light">
-  <div class="container">
-    <h2 class="h4 mb-4">Explore All Vehicles</h2>
-    <div class="row g-4">
-      <div class="col-md-3 col-6" *ngFor="let vehicle of vehicles">
-        <div class="card border-0 shadow-sm">
-          <img [src]="vehicle.image" class="card-img-top" [alt]="vehicle.title">
-          <div class="card-body">
-            <h6 class="card-title">{{ vehicle.title }}</h6>
-            <p class="card-text">{{ vehicle.details }}</p>
-            <p class="text-muted">{{ vehicle.price }}</p>
-            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
-          </div>
+<section class="container my-5">
+  <h2 class="text-center mb-4">🔥 Suggested Cars</h2>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let car of suggestedCars">
+      <div class="card car-card">
+        <img [src]="car.image" class="card-img-top" alt="{{ car.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ car.name }}</h5>
+          <p class="card-text">{{ car.price }}</p>
+          <button class="btn btn-outline-primary">View Details</button>
         </div>
-      </div>
-    </div>
-    <div class="text-center mt-3">
-      <a href="#" class="text-muted">View All <i class="fas fa-arrow-right"></i></a>
-    </div>
-  </div>
-</section>
-
-<!-- Call to Action Section -->
-<section class="py-5 bg-light">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6">
-        <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="Car">
-      </div>
-      <div class="col-md-6">
-        <h2 class="h4 mb-3">Get A Fair Price For Your Car Sell To Us Today</h2>
-        <p class="text-muted">We are committed to providing our customers with exceptional service, competitive pricing, and a wide range of...</p>
-        <ul class="list-unstyled">
-          <li><i class="fas fa-check text-primary"></i> We are the best with more portals in more places</li>
-          <li><i class="fas fa-check text-primary"></i> You get 24/7 customer service</li>
-          <li><i class="fas fa-check text-primary"></i> We fix out of cars on the roadside</li>
-        </ul>
-        <a href="#" class="btn btn-primary mt-3">Get Started</a>
       </div>
     </div>
   </div>
