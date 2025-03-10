@@ -9,6 +9,12 @@ import { RegisterComponent } from './register/register.component';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ContactComponent } from './contact/contact.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +28,12 @@ import { ContactComponent } from './contact/contact.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule 
+    AppRoutingModule ,
+    MatCardModule,      
+    MatFormFieldModule,  
+    MatInputModule,      
+    MatButtonModule,    
+    ReactiveFormsModule, BrowserAnimationsModule  
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,7 @@
-.logo {
+body {
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+  }
+  .logo {
     width: 150px;
   }
   .card {
@@ -13,4 +16,7 @@
     height: 200px;
     object-fit: cover;
   }
-  
+  .featured-cars {
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
