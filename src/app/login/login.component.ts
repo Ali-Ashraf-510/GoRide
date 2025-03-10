@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   loginForm: FormGroup;
   errorMessage: string = '';
+  loading: boolean = false; // ⏳ محاكاة تحميل البيانات عند تسجيل الدخول
 
   constructor(private fb: FormBuilder, private router: Router) {
     this.loginForm = this.fb.group({
@@ -20,29 +21,34 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.loginForm.invalid) {
-      this.errorMessage = 'Please enter a valid email and password.';
+      this.errorMessage = '⚠️ Please enter a valid email and password.';
       return;
     }
 
-    // 🔹 محاكاة التحقق من بيانات المستخدم
-    const fakeUser = {
-      email: 'test@example.com',
-      password: '123456',
-      name: 'John Doe'
-    };
+    this.loading = true; // بدء تحميل البيانات
 
-    if (
-      this.loginForm.value.email === fakeUser.email &&
-      this.loginForm.value.password === fakeUser.password
-    ) {
-      // ✅ حفظ بيانات المستخدم في localStorage (بدلًا من API)
-      localStorage.setItem('token', 'fake-jwt-token');
-      localStorage.setItem('user', JSON.stringify(fakeUser));
+    // 🔹 محاكاة استدعاء API للتحقق من بيانات المستخدم
+    setTimeout(() => {
+      const fakeUser = {
+        email: 'test@example.com',
+        password: '123456',
+        name: 'John Doe'
+      };
 
-      // 🔹 إعادة التوجيه إلى الصفحة الرئيسية أو لوحة التحكم
-      this.router.navigate(['/dashboard']);
-    } else {
-      this.errorMessage = 'Invalid email or password. Please try again.';
-    }
+      if (
+        this.loginForm.value.email === fakeUser.email &&
+        this.loginForm.value.password === fakeUser.password
+      ) {
+        // ✅ حفظ بيانات المستخدم في localStorage
+        localStorage.setItem('token', 'fake-jwt-token');
+        localStorage.setItem('user', JSON.stringify(fakeUser));
+
+        // 🔹 إعادة توجيه المستخدم بعد تسجيل الدخول الناجح
+        this.router.navigate(['/dashboard']);
+      } else {
+        this.errorMessage = '❌ Invalid email or password. Please try again.';
+        this.loading = false; // إيقاف التحميل
+      }
+    }, 1500); // ⏳ تأخير 1.5 ثانية لمحاكاة استجابة API
   }
 }
