@@ -1,56 +1,77 @@
+
 .navbar {
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: linear-gradient(45deg, #ffffff, #f5f7fa); /* لون خلفية أكثر نعومة وعصرية */
-    padding: 8px 0; /* زيادة طفيفة للارتفاع لتوازن أفضل */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* ظل أنعم وأعمق قليلاً */
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1px 0;
 }
 
+.navbar.scrolled {
+    background: #ffffff; /* Solid white when scrolled for contrast */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); /* Stronger shadow on scroll */
+}
+
+/* Logo */
 .logo {
-    width: 40px; /* حجم أكبر قليلاً لتبرز بشكل جيد */
-    height: 40px;
-    margin-right: 8px; /* مسافة متناسقة */
+    width: 48px; /* Slightly larger for prominence */
+    height: 48px;
+    margin-right: 12px; /* Consistent spacing */
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); 
+    transition: transform 0.3s ease; /* Smooth scaling */
 }
 
+.logo:hover {
+    transform: scale(1.1); 
+}
+
+/* Navbar Brand */
 .navbar-brand {
-    font-size: 1.8rem; /* حجم أكبر قليلاً ليبدو بارزًا */
-    font-weight: bold;
+    font-size: 2rem; 
+    font-weight: 700;
     font-family: 'Bebas Neue', sans-serif;
-    color: #1e3a8a; /* لون أزرق داكن أكثر حداثة */
+    color: #6b7280;
+    font-weight: 500;
     display: flex;
     align-items: center;
-    transition: transform 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease-in-out, color 0.3s ease;
 }
 
 .navbar-brand:hover {
     transform: scale(1.05);
+    color: #3182ce;
 }
 
+/* Nav Links */
 .nav-link {
     position: relative;
     font-family: 'Poppins', sans-serif;
-    font-size: 1rem; /* حجم مناسب للقراءة والمظهر العصري */
-    font-weight: 500; /* وزن متوسط لتوازن أفضل */
-    color: #2d3748; /* رمادي غامق أنيق بدلاً من #333 */
-    padding: 8px 12px; /* زيادة طفيفة للراحة البصرية */
-    transition: color 0.3s ease-in-out;
+    font-size: 0.9rem; 
+    font-weight: 500;
+    color: #2d3748; 
+    padding: 10px 15px; 
+    transition: color 0.3s ease-in-out, transform 0.2s ease;
 }
 
 .nav-link::after {
     content: '';
     position: absolute;
-    bottom: -4px; /* مسافة أفضل تحت النص */
+    bottom: -6px; /* Adjusted for better balance */
     left: 50%;
     width: 0;
-    height: 2px;
-    background-color: #3b82f6; /* أزرق فاتح نابض بالحياة */
+    height: 3px; /* Thicker underline for boldness */
+    background: linear-gradient(90deg, #3b82f6, #60a5fa); /* Gradient underline */
+    border-radius: 2px; /* Rounded edges */
     transition: width 0.3s ease, left 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #3b82f6; /* توافق اللون مع الخط السفلي */
+    color: #3182ce;
+    transform: translateY(-2px); /* Subtle lift on hover */
 }
 
 .nav-link:hover::after {
@@ -59,54 +80,132 @@
 }
 
 .nav-link.active {
-    color: #f97316; /* برتقالي دافئ وعصري بدلاً من #ff5722 */
+    color: #5e9cfa; /* Warm orange for active state */
+    font-weight: 600; /* Slight emphasis */
 }
 
+.nav-link.active::after {
+    width: 100%;
+    left: 0;
+    background: #5e9cfa; /* Match active color */
+}
+
+/* Buttons */
 .btn-custom,
 .btn-outline-custom {
-    font-size: 0.9rem; /* حجم أكبر قليلاً للأزرار لتبرز */
-    padding: 8px 16px; /* أبعاد مريحة ومتناسقة */
-    border-radius: 8px; /* زوايا مستديرة أكثر حداثة */
+    font-size: 0.7rem; /* Larger for prominence */
+    padding: 10px 20px; /* More comfortable padding */
+    border-radius: 30px; /* Pill-shaped for modern vibe */
     font-weight: 600;
-    transition: 0.3s ease-in-out;
+    text-transform: uppercase; /* Bold and modern */
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease-in-out; /* Smooth all transitions */
 }
 
 .btn-custom {
-    background: #1e3a8a; /* أزرق داكن متناسق مع العلامة التجارية */
-    color: white;
-    border: 2px solid #1e3a8a;
+    background: linear-gradient(45deg, #3b82f6, #60a5fa); /* Blue gradient matching nav links */
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); /* Subtle matching shadow */
 }
 
 .btn-custom:hover {
     background: #ffffff;
-    color: #1e3a8a;
-    border: 2px solid #1e3a8a; /* الحفاظ على الحدود عند الـ hover */
+    color: #3b82f6; /* Consistent blue on hover */
+    border: 2px solid #3b82f6; /* Blue border */
+    box-shadow: 0 6px 18px rgba(59, 130, 246, 0.25);
+    transform: translateY(-2px); /* Slight lift */
 }
 
 .btn-outline-custom {
     background: transparent;
-    color: #f97316; /* برتقالي متناسق مع الـ active */
-    border: 2px solid #f97316;
-    margin-left: 10px; /* مسافة أكبر قليلاً بين الأزرار */
+    color: #2d3748; /* Dark gray to match nav links */
+    border: 2px solid #2d3748; /* Consistent border */
+    margin-left: 12px; /* Consistent spacing */
 }
 
 .btn-outline-custom:hover {
-    background: #f97316;
-    color: white;
+    background: #2d3748; /* Dark gray fill */
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(45, 55, 72, 0.3); /* Matching shadow */
+    transform: translateY(-2px);
 }
 
+/* Responsive Design */
 @media (max-width: 992px) {
+    .navbar {
+        padding: 10px 0; /* Adjust padding */
+    }
+
     .navbar-brand {
-        font-size: 1.5rem; /* حجم مناسب للشاشات الصغيرة */
+        font-size: 1.6rem; /* Slightly smaller */
     }
 
     .nav-link {
-        font-size: 0.9rem; /* تقليل طفيف للتناسب */
+        font-size: 1rem;
+        padding: 8px 12px;
     }
 
     .btn-custom,
     .btn-outline-custom {
-        font-size: 0.85rem; /* ضبط حجم الأزرار للشاشات الصغيرة */
-        padding: 6px 12px;
+        font-size: 0.9rem;
+        padding: 8px 16px;
     }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        background: #ffffff; /* Solid background on mobile */
+    }
+
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+
+    .nav-link {
+        font-size: 0.95rem;
+        padding: 10px; /* Stack nicely in mobile menu */
+        text-align: center;
+    }
+
+    .nav-link::after {
+        bottom: 2px; /* Adjust for mobile stacking */
+    }
+
+    .btn-custom,
+    .btn-outline-custom {
+        width: 100%; /* Full-width buttons in mobile menu */
+        margin: 5px 0; /* Vertical stacking */
+    }
+}
+
+@media (max-width: 576px) {
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+}
+
+/* Animation for navbar entrance */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.navbar {
+    animation: slideIn 0.5s ease-out forwards; /* Subtle entrance */
 }

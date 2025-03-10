@@ -1,8 +1,49 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f8f9fa;
+  color: #2d3748;
+}
+
+a:hover {
+  color: #3182ce;
+}
+
+/* Navbar */
+
+.navbar .nav-link {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.navbar .nav-link:hover {
+  color: #3182ce;
+}
+
+.navbar .btn-outline-primary {
+  border-radius: 20px;
+  padding: 5px 15px;
+}
+
+.navbar .btn-primary {
+  background: #3182ce;
+  border-radius: 20px;
+  padding: 5px 15px;
+}
+
+.navbar .btn-primary:hover {
+  background: #2b6cb0;
+}
+
 /* Hero Section */
 .hero-section {
   position: relative;
   height: 100vh;
-  background: url('assets/hero-background.jpg') no-repeat center center/cover; /* استبدل بصورة خلفية جذابة */
+  background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .hero-overlay {
@@ -11,19 +52,13 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* طبقة سوداء شفافة لتحسين القراءة */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
   z-index: 1;
 }
 
-.hero-content {
+.hero-section .container {
   position: relative;
   z-index: 2;
-}
-
-.logo {
-  width: 120px;
-  height: auto;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .hero-section h1 {
@@ -32,67 +67,79 @@
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-.hero-section p {
-  font-size: 1.25rem;
+.hero-section .lead {
+  font-size: 1.2rem;
+  color: #e2e8f0;
 }
 
-/* Featured Cars Section */
-.featured-cars {
-  background-color: #fff;
-}
-
-.featured-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.featured-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.featured-card img {
-  height: 200px;
-  object-fit: cover;
-}
-
-.featured-card .card-body {
-  padding: 20px;
-}
-
-.featured-card .btn {
-  width: 100%;
+.search-bar .form-select {
+  background: #fff;
+  border: none;
+  border-radius: 20px 0 0 20px;
   padding: 10px;
 }
 
-/* All Cars Section */
-.all-cars {
-  background-color: #f8f9fa;
+.search-bar .btn-primary {
+  background: #3182ce;
+  border: none;
+  border-radius: 0 20px 20px 0;
+  padding: 10px 20px;
+  transition: background 0.3s ease;
 }
 
-.car-card {
+.search-bar .btn-primary:hover {
+  background: #2b6cb0;
+}
+
+.btn-outline-light {
+  border-radius: 20px;
+  padding: 5px 15px;
+  border-color: #fff;
+  color: #fff;
+}
+
+.btn-outline-light:hover {
+  background: #fff;
+  color: #3182ce;
+}
+
+/* Premium Brands Section */
+.card {
+  border-radius: 10px;
   transition: transform 0.3s ease;
-  border-radius: 8px;
-  overflow: hidden;
 }
 
-.car-card:hover {
-  transform: scale(1.05);
+.card:hover {
+  transform: translateY(-5px);
 }
 
-.car-card img {
-  height: 180px;
-  object-fit: cover;
+/* Explore All Vehicles Section */
+.bg-light {
+  background: #f8fafc;
 }
 
-.car-card .card-body {
-  padding: 15px;
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
-.car-card .btn {
-  width: 100%;
-  padding: 8px;
+.card-text {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Call to Action Section */
+.section-cta .btn-primary {
+  background: #3182ce;
+  border-radius: 20px;
+}
+
+.section-cta .btn-primary:hover {
+  background: #2b6cb0;
 }
 
 /* Responsive Design */
@@ -101,16 +148,28 @@
     font-size: 2.5rem;
   }
 
-  .hero-section p {
-    font-size: 1rem;
+  .search-bar .form-select,
+  .search-bar .btn-primary {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 10px;
   }
 
-  .logo {
-    width: 100px;
+  .card {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1.5rem;
   }
 
-  .featured-card img,
-  .car-card img {
-    height: 150px;
+  .hero-section {
+    height: 80vh;
+  }
+
+  .btn-outline-light {
+    margin-bottom: 5px;
   }
 }

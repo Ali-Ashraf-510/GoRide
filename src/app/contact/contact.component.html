@@ -1,1 +1,66 @@
-<p>contact works!</p>
+<div class="container mt-5 contact-section">
+    <h2 class="text-center mb-5 display-4 fw-bold text-primary">Contact Us</h2>
+    
+    <div class="row g-5">
+        <!-- Contact Info Section -->
+        <div class="col-md-6">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body p-4">
+                    <h4 class="mb-3 fw-semibold text-dark">Get In Touch</h4>
+                    <p class="text-muted mb-4">We're here to help! Contact us via phone, email, or visit our office.</p>
+                    <ul class="list-unstyled contact-info">
+                        <li class="mb-3">
+                            <span class="icon me-2">📍</span>
+                            <strong>Address:</strong> 123 Main Street, Cairo, Egypt
+                        </li>
+                        <li class="mb-3">
+                            <span class="icon me-2">📞</span>
+                            <strong>Phone:</strong> +20 123 456 789
+                        </li>
+                        <li>
+                            <span class="icon me-2">✉️</span>
+                            <strong>Email:</strong> <a href="mailto:contact@example.com" class="text-decoration-none">contact@example.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Section -->
+        <div class="col-md-6">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body p-4">
+                    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                        <div class="mb-4">
+                            <label for="name" class="form-label fw-medium">Name</label>
+                            <input type="text" id="name" class="form-control form-control-lg" formControlName="name" placeholder="Your Name">
+                            <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="text-danger mt-1 small">
+                                Name is required.
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="email" class="form-label fw-medium">Email</label>
+                            <input type="email" id="email" class="form-control form-control-lg" formControlName="email" placeholder="your@email.com">
+                            <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="text-danger mt-1 small">
+                                Valid email is required.
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="message" class="form-label fw-medium">Message</label>
+                            <textarea id="message" class="form-control form-control-lg" rows="4" formControlName="message" placeholder="Your message here..."></textarea>
+                            <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="text-danger mt-1 small">
+                                Message is required.
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg w-100 fw-medium" [disabled]="contactForm.invalid">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

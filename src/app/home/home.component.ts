@@ -6,28 +6,20 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
-  featuredCars = [
-    { id: 1, name: 'Tesla Model S', price: '$120 / Day', image: 'assets/tesla-model-s.jpg' },
-    { id: 2, name: 'BMW M4', price: '$95 / Day', image: 'assets/bmw-m4.jpg' }
+export class HomeComponent {
+  brands = [
+    { name: 'Audi', image: 'https://via.placeholder.com/100' },
+    { name: 'BMW', image: 'https://via.placeholder.com/100' },
+    { name: 'Ford', image: 'https://via.placeholder.com/100' },
+    { name: 'Mercedes Benz', image: 'https://via.placeholder.com/100' },
+    { name: 'Peugeot', image: 'https://via.placeholder.com/100' },
+    { name: 'Volkswagen', image: 'https://via.placeholder.com/100' }
   ];
 
-  cars = [
-    { id: 3, name: 'Tesla Model S', price: '$120 / Day', image: 'assets/tesla-model-s.jpg' },
-    { id: 4, name: 'BMW M4', price: '$95 / Day', image: 'assets/bmw-m4.jpg' },
-    { id: 5, name: 'Audi R8', price: '$150 / Day', image: 'assets/audi-r8.jpg' },
-    { id: 6, name: 'Mercedes E-Class', price: '$100 / Day', image: 'assets/mercedes-eclass.jpg' }
+  vehicles = [
+    { title: 'Ford Transit - 2021', details: '2.0L Powerstroke, 250 Miles, Diesel, Manual', price: '$22,000', image: 'https://via.placeholder.com/300x200' },
+    { title: 'New GLC - 2023', details: '4.0L Powerstroke, 50 Miles, Petrol, Automatic', price: '$85,000', image: 'https://via.placeholder.com/300x200' },
+    { title: 'Audi A6 - Newer', details: '3.0L Powerstroke, 100 Miles, Petrol, Automatic', price: '$80,000', image: 'https://via.placeholder.com/300x200' },
+    { title: 'Corolla Altis - 2023', details: '1.8L Powerstroke, 1500 Miles, Petrol, CVT', price: '$45,000', image: 'https://via.placeholder.com/300x200' }
   ];
-
-  constructor(private router: Router) {}
-
-  ngOnInit(): void {}
-
-  selectCar(car: any) {
-    this.router.navigate(['/car-details', car.id]);
-  }
-
-  viewDetails(car: any) {
-    this.router.navigate(['/car-details', car.id]);
-  }
 }
