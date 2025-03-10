@@ -24,19 +24,23 @@ export class LoginComponent {
       return;
     }
 
-    // 🔹 استرجاع بيانات المستخدم المسجلة من localStorage
-    const storedUser = localStorage.getItem('user');
-    if (!storedUser) {
-      this.errorMessage = 'No account found. Please register first.';
-      return;
-    }
+    // 🔹 محاكاة التحقق من بيانات المستخدم
+    const fakeUser = {
+      email: 'test@example.com',
+      password: '123456',
+      name: 'John Doe'
+    };
 
-    const user = JSON.parse(storedUser); // تحويل البيانات من نص إلى كائن
+    if (
+      this.loginForm.value.email === fakeUser.email &&
+      this.loginForm.value.password === fakeUser.password
+    ) {
+      // ✅ حفظ بيانات المستخدم في localStorage (بدلًا من API)
+      localStorage.setItem('token', 'fake-jwt-token');
+      localStorage.setItem('user', JSON.stringify(fakeUser));
 
-    // 🔹 التحقق من صحة البيانات المدخلة
-    if (this.loginForm.value.email === user.email && this.loginForm.value.password === user.password) {
-      localStorage.setItem('token', 'fake-jwt-token'); // 🔹 حفظ توكن مصطنع
-      this.router.navigate(['/dashboard']); // 🔹 إعادة التوجيه إلى لوحة التحكم
+      // 🔹 إعادة التوجيه إلى الصفحة الرئيسية أو لوحة التحكم
+      this.router.navigate(['/dashboard']);
     } else {
       this.errorMessage = 'Invalid email or password. Please try again.';
     }

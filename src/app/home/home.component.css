@@ -1,22 +1,116 @@
-body {
-    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background: url('assets/hero-background.jpg') no-repeat center center/cover; /* استبدل بصورة خلفية جذابة */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* طبقة سوداء شفافة لتحسين القراءة */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+}
+
+/* Featured Cars Section */
+.featured-cars {
+  background-color: #fff;
+}
+
+.featured-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.featured-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.featured-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.featured-card .card-body {
+  padding: 20px;
+}
+
+.featured-card .btn {
+  width: 100%;
+  padding: 10px;
+}
+
+/* All Cars Section */
+.all-cars {
+  background-color: #f8f9fa;
+}
+
+.car-card {
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.car-card:hover {
+  transform: scale(1.05);
+}
+
+.car-card img {
+  height: 180px;
+  object-fit: cover;
+}
+
+.car-card .card-body {
+  padding: 15px;
+}
+
+.car-card .btn {
+  width: 100%;
+  padding: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
   }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+
   .logo {
-    width: 150px;
+    width: 100px;
   }
-  .card {
-    border-radius: 15px;
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
+
+  .featured-card img,
+  .car-card img {
+    height: 150px;
   }
-  .card:hover {
-    transform: scale(1.05);
-  }
-  .card img {
-    height: 200px;
-    object-fit: cover;
-  }
-  .featured-cars {
-    background: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+}
