@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -8,8 +9,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent {
   registerForm: FormGroup;
+  errorMessage: string = '';
+  successMessage: string = '';
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
     this.registerForm = this.fb.group({
       fullName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -19,10 +22,30 @@ export class RegisterComponent {
   }
 
   onSubmit() {
-    if (this.registerForm.valid) {
-      console.log('Register Form Data:', this.registerForm.value);
-    } else {
-      console.log('Form is invalid');
+    if (this.registerForm.invalid) {
+      this.errorMessage = 'Please fill out all fields correctly.';
+      return;
     }
+
+    if (this.registerForm.value.password !== this.registerForm.value.confirmPassword) {
+      this.errorMessage = 'Passwords do not match!';
+      return;
+    }
+
+    // 🔹 محاكاة تسجيل المستخدم (بدون API)
+    const newUser = {
+      fullName: this.registerForm.value.fullName,
+      email: this.registerForm.value.email,
+      password: this.registerForm.value.password
+    };
+
+    // ✅ حفظ بيانات المستخدم في localStorage كأنه تم تسجيله
+    localStorage.setItem('user', JSON.stringify(newUser));
+
+    // 🔹 عرض رسالة نجاح وإعادة توجيه المستخدم إلى صفحة تسجيل الدخول
+    this.successMessage = 'Registration successful! Redirecting...';
+    setTimeout(() => {
+      this.router.navigate(['/login']);
+    }, 2000);
   }
 }

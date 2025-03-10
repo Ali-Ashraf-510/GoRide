@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   loginForm: FormGroup;
+  errorMessage: string = '';
 
   constructor(private fb: FormBuilder, private router: Router) {
     this.loginForm = this.fb.group({
@@ -18,16 +19,26 @@ export class LoginComponent {
   }
 
   onSubmit() {
-    if (this.loginForm.valid) {
-      console.log('Login Data:', this.loginForm.value);
-      
-      // Simulated login success
-      localStorage.setItem('user', JSON.stringify(this.loginForm.value));
+    if (this.loginForm.invalid) {
+      this.errorMessage = 'Please enter a valid email and password.';
+      return;
+    }
 
-      // Redirect to home page or dashboard
-      this.router.navigate(['/']);
+    // 🔹 استرجاع بيانات المستخدم المسجلة من localStorage
+    const storedUser = localStorage.getItem('user');
+    if (!storedUser) {
+      this.errorMessage = 'No account found. Please register first.';
+      return;
+    }
+
+    const user = JSON.parse(storedUser); // تحويل البيانات من نص إلى كائن
+
+    // 🔹 التحقق من صحة البيانات المدخلة
+    if (this.loginForm.value.email === user.email && this.loginForm.value.password === user.password) {
+      localStorage.setItem('token', 'fake-jwt-token'); // 🔹 حفظ توكن مصطنع
+      this.router.navigate(['/dashboard']); // 🔹 إعادة التوجيه إلى لوحة التحكم
     } else {
-      console.log('Invalid credentials, please try again.');
+      this.errorMessage = 'Invalid email or password. Please try again.';
     }
   }
 }
